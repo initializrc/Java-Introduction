@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Vector;
 
 // nama class harus sesuai nama file yang dibuat
 public class ArrayArrayListVector {
@@ -7,7 +9,7 @@ public class ArrayArrayListVector {
     public static void main(String[] args) {
         // array ialah sekumpulan tipe data primitve yang sejenis
 
-        System.out.println("<<<< Array >>>>");
+        System.out.println("<<<< Array >>>>"); // bersifat statis
         System.out.println("\nArray integer");
         int [] arrayInteger = new int[10]; // deklarasi array
         arrayInteger[4] = 15; // assignment array
@@ -85,5 +87,73 @@ public class ArrayArrayListVector {
         for (int i = 0; i < arrayTarget3.length; i++){
             System.out.println(arrayTarget3[i]);
         }
+
+        System.out.println("\n<<< Array 2 Dimensi >>>");
+        int[][] array2D = new int[3][3];
+
+        int fillArray = 0;
+
+        for (int i = 0; i < array2D.length; i++){
+            for (int j = 0; j < array2D[i].length; j++){
+                System.out.println(i + " " + j);
+                array2D[i][j] = fillArray++;
+
+                fillArray++;
+            }
+        }
+
+        for (int i = 0; i < array2D.length; i++){
+            for (int j = 0; j < array2D[i].length; j++){
+                System.out.print(array2D[i][j] + " ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("\n<<< ArrayList >>>"); // bersifat dinamis
+        // penambahan jumlah size data sebanyak 50 % // asynchronize berhubungan dengan threading
+        ArrayList<String> wordList = new ArrayList<String>();
+        System.out.println(".add");// menambah data
+        wordList.add("Algorithm& Programming");
+        wordList.add("OOP");
+        wordList.add("Calculus");
+        for (int i = 0; i < wordList.size(); i++){
+            System.out.println(wordList.get(i));
+        }
+
+        System.out.println("\n.set"); // mengubah data
+        wordList.set(1,"Data Structure"); // parameter index, data
+        for (int i = 0; i < wordList.size(); i++){
+            System.out.println(wordList.get(i));
+        }
+
+        System.out.println("\n.remove"); // menghapus data
+        wordList.remove(1); // parameter index
+        for (int i = 0; i < wordList.size(); i++){
+            System.out.println(wordList.get(i));
+        }
+
+        System.out.println("\n<<< Vector >>>" ); // synchronize berhubungan dengan threading
+        // penambahan datanya sebanyak 2 kali jumlah size aslinya
+        Vector<Integer> numberList = new Vector<>();
+        System.out.println(".add");// menambah data
+        numberList.add(89);
+        numberList.add(45);
+        numberList.add(27);
+        for (int i = 0; i < numberList.size(); i++){
+            System.out.println(numberList.get(i));
+        }
+
+        System.out.println("\n.set"); // mengubah data
+        numberList.set(2, 77); // parameter index, data
+        for (int i = 0; i < numberList.size(); i++){
+            System.out.println(numberList.get(i));
+        }
+
+        System.out.println("\n.remove"); // menghapus data
+        numberList.remove(1); // parameter index
+        for (int i = 0; i < numberList.size(); i++){
+            System.out.println(numberList.get(i));
+        }
+
     }
 }
